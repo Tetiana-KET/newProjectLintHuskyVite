@@ -24,8 +24,7 @@
   "lint-staged": {
     "./src/**.{css,scss}": "npm run stylelint:fix",
     "./src/**.{ts,js}": "npm run lint:fix",
-    "./src/**.*": "npm run prettier:fix",
-    "**/*": "prettier --write --ignore-unknown"
+    "./src/**.*": "npm run prettier:fix"
   },
   "husky": {
     "hooks": {
