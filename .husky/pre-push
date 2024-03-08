@@ -1,2 +1,2 @@
-#!cd rss-puzzle (переход в папку с проэктом)
+#!cd rss-puzzle (#! - удалить, переход в папку с проэктом)
 #!npx validate-branch-name

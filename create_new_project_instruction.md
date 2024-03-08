@@ -63,6 +63,7 @@ _eslint-plugin-prettier и сам prettier для работы притиер_
   }
 `
 - Note: If you use ESLint, make sure lint-staged runs it before Prettier, not after.
+- в pre-commit и pre-push удали вот это - #! - это коммент
 
 файл pre-commit
 cd rss-puzzle - перейти в папку
