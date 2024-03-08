@@ -20,7 +20,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true
     // "baseUrl": ".",
-    // "paths": {
+    // "paths": { - алиасі для путей
     //   "@components/*": ["src/app/components/*"],
     //   "@pages/*": ["src/app/pages/*"],
     //   "@utils/*": ["src/app/utils/*"],

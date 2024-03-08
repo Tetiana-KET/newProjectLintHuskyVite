@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  css: {
-    modules: {
-      localsConvention: 'camelCase',
-    },
-  },
+	css: {
+		modules: {
+			localsConvention: 'camelCase',
+		},
+	},
 });

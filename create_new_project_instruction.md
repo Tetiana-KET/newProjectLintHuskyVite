@@ -1,3 +1,4 @@
+https://gist.github.com/TELEUZI/410d19772481d98b06e0b41ebf89fff1
 **npm init -y** для создания файла package.json
 **npm i** установки исходных зависимостей проекта если скопировала файлы
 
@@ -24,7 +25,7 @@ _eslint-config-prettier для правильной совместной раб�
 _eslint-config-airbnb - стайл гайд_
 _eslint-plugin-html - линтить ошибки в теге скрипт_
 _eslint-plugin-import - поддерживать синтаксис импорт/экспорт_
-_eslint-plugin-jsx-a11y- правила касающиеся доступности для людей с огр.возм.\*_
+_eslint-plugin-jsx-a11y- правила касающиеся доступности для людей с огр.возм_
 _eslint-plugin-prettier и сам prettier для работы притиер_
 
 - создать файл с настройками **.eslintrc.json**
@@ -40,16 +41,38 @@ _eslint-plugin-prettier и сам prettier для работы притиер_
 - create file **.prettierrc**
 - create file **.prettierignore**
 
-## 5. Настраиваем Husky и Lint staged
+## 5. Настраиваем Husky и Lint staged и validate-branch-name
 
 - Install husky and lint-staged:
   **npm install --save-dev husky lint-staged**
   **npx husky init**
+  - **"prepare": "cd .. && husky rss-puzzle/.husky" в package.json**
+  - npm run prepare - выполнить в терминале 1 раз
+ - **.lintstagedrc.json** создать файл
+     ` {
+        "./src/.": ["npm run ci:format"],
+        "./src/**.*": ["npm run format"]
+      `}
+ - **npm install validate-branch-name -D**
+ - **.validate-branch-namerc.json** создать файл
+
+ `
+  {
+    "pattern": "^(feat|fix|chore|refactor)/RSS-PZ-(0\\d|\\d+)_\\w+",
+    "errorMsg": "Branch name doesn't follow the defined repository rules"
+  }
+`
 - Note: If you use ESLint, make sure lint-staged runs it before Prettier, not after.
 
-## 6. validate-branch-name
+файл pre-commit
+cd rss-puzzle - перейти в папку
+npx lint-staged
 
-- **npm install validate-branch-name -D**
+файл pre-push
+cd rss-puzzle
+npx validate-branch-name
+
+
 - https://www.npmjs.com/package/validate-branch-name
 
   https://github.com/Jeneko/News-api-migration-walkthrough

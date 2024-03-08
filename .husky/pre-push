@@ -1,1 +1,2 @@
-npx validate-branch-name
+#!cd rss-puzzle (переход в папку с проэктом)
+#!npx validate-branch-name
