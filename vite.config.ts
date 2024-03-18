@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite';
+//import { defineConfig } from 'vite'; - раскоментить
 
-export default defineConfig({
-	css: {
-		modules: {
-			localsConvention: 'camelCase',
-		},
-	},
-});
+// export default defineConfig({
+//   css: {
+//     modules: {
+//       localsConvention: 'camelCase',
+//     },
+//   },
+//   base: '',
+// });

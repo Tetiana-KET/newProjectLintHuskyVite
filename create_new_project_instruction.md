@@ -49,10 +49,17 @@ _eslint-plugin-prettier и сам prettier для работы притиер_
   - **"prepare": "cd .. && husky rss-puzzle/.husky" в package.json**
   - npm run prepare - выполнить в терминале 1 раз
  - **.lintstagedrc.json** создать файл
-     ` {
-        "./src/.": ["npm run ci:format"],
-        "./src/**.*": ["npm run format"]
-      `}
+    ` {
+      "./src/.": ["npm run ci:format"],
+      "./src/**.*": ["npm run format"]
+    `}
+
+    *изза вложенностей нужно поправить пути*
+    `{
+      "./src/.": ["npm run ci:format"],
+      "./src/**/*.*": ["npm run format"]
+    }
+    `
  - **npm install validate-branch-name -D**
  - **.validate-branch-namerc.json** создать файл
 
@@ -78,3 +85,27 @@ npx validate-branch-name
 
   https://github.com/Jeneko/News-api-migration-walkthrough
   _стайлинт - опционально, нужно разобраться_
+
+
+## DEPLOY
+
+ в вите конфиг
+```import { defineConfig } from 'vite';
+
+export default defineConfig({
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+    },
+  },
+  base: '',
+});```
+
+В package.json добавить
+
+"deploy": "npm run build && npx gh-pages -d dist -e rss-puzzle"
+
+в терминале просто запускаешь
+npm install gh-pages --save-dev
+npm run deploy
+все. весь деплой
